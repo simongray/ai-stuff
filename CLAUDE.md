@@ -1,0 +1,16 @@
+- Clojure is a FUNCTIONAL programming language.
+    - i.e. I expect you to do to REPL-based development in a FUNCTIONAL style.
+      - So when testing newly developed code, please just do a few relevant function calls in the REPL.
+- Be surgical in your edits.
+  - I generally favour clean and lean git diffs over large refactors of the namespace(s).
+- IMPORTANT: if you encounter something UNUSUAL (e.g. weird output or unexpected errors), report back **immediately** to me!
+  - Don't go on a longer tangent trying to analyze an unexpected error yourself (unless it is trivial to do so).
+- Generally, you will need explicit permission from me to restart the web service we're developing.
+  - Again, try to test newly developed fixes/functionality in an isolated way using the REPL.
+- After editing CLJ or CLJC files, reload the affected namespaces using `(require '[namespace] :reload)` so the changes take effect in the running REPL.
+- For frontend-only bugs (hydration errors, CLJS/CLJ differences, CSS/layout issues), debug in the LIVE BROWSER via the shadow-cljs nREPL rather than guessing from source — follow the `browser-repl-debug` skill (it loads on demand).
+- REPL access: use the `clj-nrepl-eval` command to evaluate Clojure code via nREPL.
+  - Discover running nREPL servers with `clj-nrepl-eval --discover-ports`.
+  - Evaluate with `clj-nrepl-eval -p <port> "<clojure-code>"` (JVM nREPL: port 7888 via the `:nrepl` alias; shadow-cljs runs its own auto-discoverable nREPL port).
+  - REPL sessions persist per port: namespaces and state are maintained between evaluations.
+- When writing, editing, or reviewing Clojure code, follow the `clojure-style` skill (it loads on demand).
